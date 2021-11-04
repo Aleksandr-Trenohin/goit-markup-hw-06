@@ -355,6 +355,7 @@
     <!--Подвал-->
     <footer class="footer">
       <div class="container footer-container">
+        <!-- нужен ли? footer-contacts -->
         <div class="footer-contacts">
           <a href="./index.html" lang="en" class="logo">
             <span class="accent">Web</span>Studio</a
@@ -412,8 +413,27 @@
             </li>
           </ul>
         </div>
+        <div class="email-input">
+          <p class="email-text">Подпишитесь на рассылку</p>
+          <form class="email-form">
+            <input
+              type="email"
+              name="e-mail"
+              id=""
+              class="e-mail"
+              placeholder="E-mail"
+            />
+            <button type="submit" class="button submit">
+              Подписаться<svg class="send-icon">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
+    <!-- модалка -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="button close" data-modal-close>
@@ -421,6 +441,46 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <form class="modal-form">
+          <p class="modal-text">Оставьте свои данные, мы вам перезвоним</p>
+          <div class="form-field">
+            <label for="name">Имя</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="icon-person"
+            />
+          </div>
+          <div class="form-field">
+            <label for="phone">Телефон</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="icon-phone"
+            />
+          </div>
+          <div class="form-field">
+            <label for="email">Почта</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="icon-email"
+            />
+          </div>
+          <div class="form-field">
+            <label for="comment">Комментарий</label>
+            <textarea
+              name="comment"
+              id="comment"
+              placeholder="Введите текст"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>

@@ -352,7 +352,6 @@ p {
   font-weight: 500;
   font-size: 16px;
 }
-/* ? .team-social {} */
 .social-list {
   display: flex;
   justify-content: center;
@@ -596,7 +595,7 @@ p {
   width: 206px;
 }
 .social-text,
-.email-text {
+.footer-form-text {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -615,39 +614,45 @@ p {
 .footer-social-list .social-link:focus {
   background-color: var(--accent-color);
 }
-.email-input {
+
+.footer-form {
   margin-left: auto;
   width: 570px;
 }
-.email-form {
+.footer-form-field {
   display: flex;
 }
-.e-mail {
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+.footer-form-email {
   width: 358px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  min-height: 50px;
   padding-left: 16px;
   margin-right: 12px;
   border-radius: 4px;
-}
-.e-mail::placeholder {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--footer-bg-color);
+  /*? filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+
   font-size: 16px;
   line-height: 1.25;
-  /* display: flex;
-  align-items: center; */
+  color: var(--footer-contacts-text);
+}
+.footer-form-email::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
   /* color: var(--footer-contacts-text); */
 }
-.button.submit {
+.footer-form-email:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.button.subscribe {
   display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
 
-  padding-top: 10px;
-  padding-right: 28px;
-  padding-bottom: 10px;
-  padding-left: 29px;
+  width: 200px;
+  min-height: 50px;
+
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
@@ -705,7 +710,7 @@ p {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-.modal-text {
+.modal-form-text {
   margin-bottom: 12px;
 
   font-weight: 700;
@@ -719,20 +724,37 @@ p {
   flex-direction: column;
   margin-bottom: 10px;
 }
-.form-field label {
-  margin-bottom: 4px;
+.form-field-wrapper {
+  position: relative;
+
+  margin-top: 4px;
+}
+.form-field-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+
+  padding-top: 11px;
+  padding-right: auto;
+  padding-bottom: 11px;
+  padding-left: 42px;
+  /* border: 1px solid var(--accent-color); */
+  border-radius: 4px;
 
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 }
-.form-field input {
-  padding-top: 11px;
-  padding-right: auto;
-  padding-bottom: 11px;
-  padding-left: 12px;
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
 }
-.form-field textarea {
+.form-icon .form-field textarea {
   height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -760,8 +782,12 @@ p {
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  box-sizing: border-box;
+
+  color: var(--logo-color);
 }
 .close-modal-icon {
-  fill: var(--logo-color);
+  fill: currentColor;
+}
+.button.close:hover {
+  color: var(--accent-color);
 }

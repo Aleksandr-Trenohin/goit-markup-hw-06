@@ -439,6 +439,7 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <!-- форма -->
         <form class="modal-form">
           <p class="modal-form-text">Оставьте свои данные, мы вам перезвоним</p>
           <label class="form-field"
@@ -447,6 +448,7 @@
                 type="text"
                 name="modal-name"
                 placeholder=" "
+                required
                 class="form-field-input" /><svg class="form-field-icon">
                 <use href="./images/icons.svg#icon-person"></use></svg
             ></span>
@@ -457,6 +459,8 @@
                 type="tel"
                 name="modal-phone"
                 placeholder=" "
+                required
+                minlength="3"
                 class="form-field-input" /><svg class="form-field-icon">
                 <use href="./images/icons.svg#icon-phone"></use></svg></span
           ></label>
@@ -466,6 +470,7 @@
                 type="email"
                 name="modal-email"
                 placeholder=" "
+                required
                 class="form-field-input" /><svg class="form-field-icon">
                 <use href="./images/icons.svg#icon-email"></use></svg></span
           ></label>
@@ -477,12 +482,10 @@
               class="form-comment-textarea"
             ></textarea>
           </label>
-          <!-- <div class="form-checkbox"> for  -->
-          <label for="modal-checkbox" class="form-checkbox">
+          <label class="form-checkbox">
             <input
               type="checkbox"
               name="modal-agreement"
-              id="modal-checkbox"
               class="form-checkbox-agreement" />Соглашаюсь с рассылкой и
             принимаю&#32;<a
               href=""
@@ -497,8 +500,6 @@
             <svg class="form-check-icon" width="16" height="15">
               <use href="./images/icons.svg#icon-check"></use></svg
           ></label>
-
-          <!-- </div> -->
           <button type="submit" class="button form">Отправить</button>
         </form>
       </div>

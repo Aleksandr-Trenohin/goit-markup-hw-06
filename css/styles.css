@@ -3,7 +3,7 @@
   --title-text-color: #212121;
   --logo-color: #000000;
   --accent-color: #2196f3;
-  --primary-btn-accent: #188ce8;
+  --btn-accent-color: #188ce8;
   --primary-white-color: #ffffff;
   --header-border-color: #ececec;
   --portfolio-border-color: #eeeeee;
@@ -251,7 +251,7 @@ p {
 }
 .button.primary:hover,
 .button.primary:focus {
-  background-color: var(--primary-btn-accent);
+  background-color: var(--btn-accent-color);
 }
 /* features */
 .features {
@@ -637,8 +637,8 @@ p {
   color: var(--footer-contacts-text);
 }
 .footer-form-email::placeholder {
-  font-size: 16px;
-  line-height: 1.25;
+  /* font-size: 16px;
+  line-height: 1.25; */
   /* color: var(--footer-contacts-text); */
 }
 .footer-form-email:focus {
@@ -710,6 +710,10 @@ p {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
 .modal-form-text {
   margin-bottom: 12px;
 
@@ -723,6 +727,10 @@ p {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
 }
 .form-field-wrapper {
   position: relative;
@@ -735,17 +743,22 @@ p {
   height: 40px;
 
   padding-top: 11px;
-  padding-right: auto;
+  padding-right: 11px;
   padding-bottom: 11px;
   padding-left: 42px;
-  /* border: 1px solid var(--accent-color); */
+  border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
-  font-size: 12px;
+  /* font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
+  color: var(--title-text-color); */
 }
-.form-icon {
+.form-field-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.form-field-icon {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -753,20 +766,117 @@ p {
 
   width: 18px;
   height: 18px;
+
+  fill: var(--title-text-color);
 }
-.form-icon .form-field textarea {
-  height: 120px;
-  padding: 12px 16px;
+.form-field-input:focus + .form-field-icon {
+  fill: var(--accent-color);
+}
+.form-comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+.form-comment-textarea {
   resize: none;
+
+  height: 120px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
 }
-.form-field textarea::placeholder {
-  font-size: 14px;
+.form-comment-textarea::placeholder {
+  font-size: 12px;
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
+.form-comment-textarea:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.form-checkbox {
+  position: relative;
+
+  margin-bottom: 30px;
+  padding-left: 36px;
+
+  font-size: 14px;
+  line-height: 1.71;
+}
+/* .form-checkbox-text {
+  padding-left: 36px;
+
+  font-size: 14px;
+  line-height: 1.71;
+} */
+.form-checkbox-agreement {
+  /* position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%); */
+  /* appearance: none; */
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+.form-checkbox-agreement:checked ~ .form-check-icon {
+  opacity: 1;
+}
+.form-checkbox-agreement:checked + .form-checkbox-icon {
+  opacity: 0;
+}
+.form-checkbox-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+/* .form-checkbox:focus-within .form-checkbox-icon {
+  opacity: 0;
+} */
+.form-check-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+/* .form-checkbox:focus-within .form-check-icon {
+  opacity: 1;
+} */
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.3);
+}
+.button.form {
+  /* align-items: center; */
+  margin: 0 auto;
+  width: 200px;
+  min-height: 50px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+}
+.button.form:hover,
+.button.form:focus {
+  background-color: var(--btn-accent-color);
 }
 .button.close {
   position: absolute;
@@ -788,6 +898,7 @@ p {
 .close-modal-icon {
   fill: currentColor;
 }
-.button.close:hover {
+.button.close:hover,
+.button.close:focus {
   color: var(--accent-color);
 }
